@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Page Object Model with PageFactory]">
+  <listeners>
+    <listener class-name="listeners.CustomListeners"/>
+    <listener class-name="listeners.ExtentReporterNG"/>
+  </listeners>
+  <test name="Login(failed)">
+    <classes>
+      <class name="testcases.androiddax.LoginTest">
+        <methods>
+          <include name="init"/>
+          <include name="login"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testcases.androiddax.LoginTest -->
+    </classes>
+  </test> <!-- Login(failed) -->
+</suite> <!-- Failed suite [Page Object Model with PageFactory] -->

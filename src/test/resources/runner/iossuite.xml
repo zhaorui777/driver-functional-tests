@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="driver-functional-tests">
+
+	<listeners>
+		<listener class-name="listeners.CustomListeners"></listener>
+		<listener class-name="listeners.ExtentReporterNG"/>
+	
+	</listeners>
+
+  <test name="Login">
+    <classes>
+      <class name="testcases.iosdax.LoginTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
