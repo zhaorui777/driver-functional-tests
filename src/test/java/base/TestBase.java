@@ -19,7 +19,7 @@ public class TestBase {
 	
 	
 	@BeforeMethod
-	public void setUp() throws IOException{
+	public void setUp() throws IOException, InterruptedException{
 		if(driver==null){
 			AppiumServer.start();
 			//log.debug("Appium server started");

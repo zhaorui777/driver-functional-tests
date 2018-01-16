@@ -95,6 +95,7 @@ public class CommonUtils {
 		capabilities.setCapability(MobileCapabilityType.APP,APP_PATH);
 		capabilities.setCapability(MobileCapabilityType.UDID, UDID);
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AUTOMATION_NAME);
+		System.out.println("Finish setting Android capabilities");
 	}
 	
 	
@@ -111,6 +112,7 @@ public class CommonUtils {
 		capabilities.setCapability(MobileCapabilityType.APP,APP_PATH);
 		capabilities.setCapability(MobileCapabilityType.UDID, UDID);
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AUTOMATION_NAME);
+		System.out.println("Finish setting iOS capabilities");
 	}
 	
 	
@@ -126,10 +128,11 @@ public class CommonUtils {
 		return driver;
 	}
 	
-	public static AppiumDriver<MobileElement> getIOSDriver() throws MalformedURLException{
+	public static AppiumDriver<MobileElement> getIOSDriver() throws MalformedURLException, InterruptedException{
 	
 //		serverUrl=new URL("http://localhost:"+APPIUM_PORT+"/wd/hub");
 		serverUrl=new URL("http://127.0.0.1:4723/wd/hub");
+		Thread.sleep(10000);
 		driver= new IOSDriver<MobileElement>(serverUrl,capabilities);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		return driver;

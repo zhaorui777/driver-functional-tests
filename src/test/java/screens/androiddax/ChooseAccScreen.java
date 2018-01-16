@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import base.ScreenBase;
 import io.appium.java_client.AppiumDriver;
@@ -23,7 +24,7 @@ public class ChooseAccScreen extends ScreenBase{
 	
 	public void chooseAcc(){
 		try{
-	    	Thread.sleep(5000);
+	    	this.wait.until(ExpectedConditions.elementToBeClickable(chooseAccBtn.get(0)));
 			chooseAccBtn.get(0).click();
 		}
 		catch(Exception e){

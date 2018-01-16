@@ -2,8 +2,12 @@ package screens.androiddax;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import com.thoughtworks.selenium.Wait;
 
 import base.ScreenBase;
 import io.appium.java_client.AppiumDriver;
@@ -21,9 +25,10 @@ public class AgreeScreen extends ScreenBase{
 		PageFactory.initElements(new AppiumFieldDecorator(driver,10,TimeUnit.SECONDS), this);
 	}
 	
+	
     public void agree() throws Exception{
 	    try{
-	    	Thread.sleep(5000);
+	    	this.wait.until(ExpectedConditions.elementToBeClickable(agreeBtn));
 		    agreeBtn.click();
 	    }
 	    catch(Exception e){

@@ -23,7 +23,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class SignInOptScreen extends ScreenBase{
 	
-	WebDriverWait wait= new WebDriverWait(driver, 5);
+//	WebDriverWait wait= new WebDriverWait(driver, 5);
 	
 	/*
 	@AndroidFindBys(value="Sign in with Device", value = { @AndroidFindBy })
@@ -46,8 +46,8 @@ public class SignInOptScreen extends ScreenBase{
 	
 	public void signInDeviceOpt(){
 		try{
-
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(signInWithDeviceOptXpath)));
+	    	this.wait.until(ExpectedConditions.elementToBeClickable(signInDeviceOpt));
+//			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(signInWithDeviceOptXpath)));
 			signInDeviceOpt.click();
 		}
 		catch(Exception e){
@@ -57,7 +57,7 @@ public class SignInOptScreen extends ScreenBase{
 	
 	public void signInGoogleOpt(){
 		try{
-	    	Thread.sleep(5000);
+	    	this.wait.until(ExpectedConditions.elementToBeClickable(signInGoogleOpt));
 			signInGoogleOpt.click();
 		}
 		catch(Exception e){
@@ -67,7 +67,7 @@ public class SignInOptScreen extends ScreenBase{
 	
 	public void signUpOpt(){
 		try{
-	    	Thread.sleep(5000);
+	    	this.wait.until(ExpectedConditions.elementToBeClickable(signUpOpt));
 			signUpOpt.click();
 		}
 		catch(Exception e){

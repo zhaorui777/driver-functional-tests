@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import base.ScreenBase;
 import io.appium.java_client.AppiumDriver;
@@ -27,7 +28,7 @@ public class SignInNSignUpScreen extends ScreenBase{
 	
 	public void signIn(){
 	    try{
-	    	Thread.sleep(5000);
+	    	this.wait.until(ExpectedConditions.elementToBeClickable(signInBtn));
 		    signInBtn.click();
 	    }
 	    catch(Exception e){
@@ -37,7 +38,7 @@ public class SignInNSignUpScreen extends ScreenBase{
 	
 	public void signUp(){
 	    try{
-	    	Thread.sleep(5000);
+	    	this.wait.until(ExpectedConditions.elementToBeClickable(signUpBtn));
 		    signUpBtn.click();
 	    }
 	    catch(Exception e){
