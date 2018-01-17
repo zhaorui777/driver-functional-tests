@@ -15,13 +15,13 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class LoginScreen extends ScreenBase{
 	@AndroidFindBy(id="com.grabtaxi.driver2:id/sign_in")
-	public WebElement signIn;
+	public WebElement signInBtn;
 	
 	@AndroidFindBy(id="android.widget.TextView")
-	public WebElement signInWighDiffAccBtn;
+	public WebElement signInWithDiffAccBtn;
 	
 	@AndroidFindBy(id="com.google.android.gms:id/account_name")
-	public WebElement chooseAcc;
+	public WebElement chooseAccBtn;
 	
 	public LoginScreen(AppiumDriver<MobileElement> driver) {
 		super(driver);
@@ -31,24 +31,26 @@ public class LoginScreen extends ScreenBase{
     public void login() throws Exception{
 	    
 	    try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(signIn));
-	    	signIn.click();
+	    	wait.until(ExpectedConditions.elementToBeClickable(signInBtn));
+	    	signInBtn.click();
 	    }
 	    catch(Exception e){
+	    	logger.error("No signInBtn!");
 	    }
 	    
 	    try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(signInWighDiffAccBtn));
-	    	signInWighDiffAccBtn.click();
+	    	wait.until(ExpectedConditions.elementToBeClickable(signInWithDiffAccBtn));
+	    	signInWithDiffAccBtn.click();
 	    }
 	    catch(Exception e){
+	    	logger.error("No signInWithDiffAccBtn!");
 	    }
 	    try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(chooseAcc));
-	    	chooseAcc.click(); 
+	    	wait.until(ExpectedConditions.elementToBeClickable(chooseAccBtn));
+	    	chooseAccBtn.click(); 
 	    }
 	    catch(Exception e){
-	    	System.out.println("No element found");
+	    	logger.error("No chooseAccBtn");
 	    }
 	    
     }

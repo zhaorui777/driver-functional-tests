@@ -1,6 +1,7 @@
 package screens.androiddax;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -19,7 +20,6 @@ public class AgreeScreen extends ScreenBase{
 	@AndroidFindBy(id="com.grabtaxi.driver2:id/terms_agree")
 	public WebElement agreeBtn;
 	
-	
 	public AgreeScreen(AppiumDriver<MobileElement> driver) {
 		super(driver);
 		PageFactory.initElements(new AppiumFieldDecorator(driver,10,TimeUnit.SECONDS), this);
@@ -28,11 +28,11 @@ public class AgreeScreen extends ScreenBase{
 	
     public void agree() throws Exception{
 	    try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(agreeBtn));
+	    	wait.until(ExpectedConditions.elementToBeClickable(agreeBtn));
 		    agreeBtn.click();
 	    }
 	    catch(Exception e){
-	    	System.out.println("Can't find agreeBtn");
+	    	logger.error("Can't find agreeBtn");
 	    }	   
     }
 }

@@ -14,7 +14,7 @@ public class TestBase {
 
 	public static AppiumDriver<MobileElement> driver;
 	//public static String loadPropertyFile="IOS_dax.properties";
-	public static String loadPropertyFile="Android_dax.properties";
+	public static String loadPropertyFile;
 	//public static ExcelReader excel= new ExcelReader();
 	
 	
@@ -32,7 +32,7 @@ public class TestBase {
 				driver= CommonUtils.getIOSDriver();
 				
 			}else if(loadPropertyFile.startsWith("Android")){
-				// Change the content from 'IOS' to 'Android' and need to coressponding files
+				// Change the content from 'IOS' to 'Android' and need to corresponding files
 				CommonUtils.loadAndroidConfProp(loadPropertyFile);
 				CommonUtils.setAndroidCapabilites();
 				driver= CommonUtils.getAndroidDriver();

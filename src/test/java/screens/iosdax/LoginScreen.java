@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import base.ScreenBase;
 import io.appium.java_client.AppiumDriver;
@@ -30,13 +31,13 @@ public class LoginScreen extends ScreenBase{
 	public WebElement termsAgree;
 	
 	@iOSFindBy(id="com.grabtaxi.driver2:id/footer_sign_in_with_diff_acc")
-	public WebElement signDiffAcc;
+	public WebElement signDiffAccBtn;
 	
 	@iOSFindBy(id="com.grabtaxi.driver2:id/sign_in")
-	public WebElement signIn;
+	public WebElement signInBtn;
 
 	@iOSFindBy(id="com.google.android.gms:id/account_name")
-	public List<WebElement> chooseAcc;
+	public List<WebElement> chooseAccBtn;
 	
 	
 	
@@ -55,7 +56,7 @@ public class LoginScreen extends ScreenBase{
 	
 	public void signDiffAcc(){
 	    try{
-		    signDiffAcc.click();
+		    signDiffAccBtn.click();
 	    }
 	    catch(Exception e){
 	    }
@@ -64,7 +65,7 @@ public class LoginScreen extends ScreenBase{
 	public void signIn() throws Exception{
 	    
 	    try{
-			signIn.click();
+			signInBtn.click();
 	    }
 	    catch(Exception e){
 	    }
@@ -80,10 +81,10 @@ public class LoginScreen extends ScreenBase{
 	    
 	    public void chooseAcc(){
 		    try {
-				Thread.sleep(5000);
-			    chooseAcc.get(5).click(); //Use account 001
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		    	this.wait.until(ExpectedConditions.elementToBeClickable(chooseAccBtn.get(5)));
+			    chooseAccBtn.get(5).click(); //Use account 001
+			} catch (Exception e) {
+				System.out.println("Fail to find chooseAccBtn");
 			}
 	    }
 	    

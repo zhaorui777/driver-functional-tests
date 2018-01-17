@@ -46,32 +46,32 @@ public class SignInOptScreen extends ScreenBase{
 	
 	public void signInDeviceOpt(){
 		try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(signInDeviceOpt));
+	    	wait.until(ExpectedConditions.elementToBeClickable(signInDeviceOpt));
 //			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(signInWithDeviceOptXpath)));
 			signInDeviceOpt.click();
 		}
 		catch(Exception e){
-			System.out.println("Skipped signInDeviceOption");
+			logger.error("Skipped signInDeviceOption");
 		}
 	}
 	
 	public void signInGoogleOpt(){
 		try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(signInGoogleOpt));
+	    	wait.until(ExpectedConditions.elementToBeClickable(signInGoogleOpt));
 			signInGoogleOpt.click();
 		}
 		catch(Exception e){
-			System.out.println("Skipped signInGoogleOption");
+			logger.error("Skipped signInGoogleOption");
 		}
 	}
 	
 	public void signUpOpt(){
 		try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(signUpOpt));
+	    	wait.until(ExpectedConditions.elementToBeClickable(signUpOpt));
 			signUpOpt.click();
 		}
 		catch(Exception e){
-			System.out.println("Skipped signUpOption");
+			logger.error("Skipped signUpOption");
 		}
 	}
 	

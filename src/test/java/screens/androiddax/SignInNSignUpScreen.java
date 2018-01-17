@@ -28,7 +28,7 @@ public class SignInNSignUpScreen extends ScreenBase{
 	
 	public void signIn(){
 	    try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(signInBtn));
+	    	wait.until(ExpectedConditions.elementToBeClickable(signInBtn));
 		    signInBtn.click();
 	    }
 	    catch(Exception e){
@@ -38,7 +38,7 @@ public class SignInNSignUpScreen extends ScreenBase{
 	
 	public void signUp(){
 	    try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(signUpBtn));
+	    	wait.until(ExpectedConditions.elementToBeClickable(signUpBtn));
 		    signUpBtn.click();
 	    }
 	    catch(Exception e){

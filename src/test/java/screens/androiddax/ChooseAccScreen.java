@@ -24,11 +24,11 @@ public class ChooseAccScreen extends ScreenBase{
 	
 	public void chooseAcc(){
 		try{
-	    	this.wait.until(ExpectedConditions.elementToBeClickable(chooseAccBtn.get(0)));
+	    	wait.until(ExpectedConditions.elementToBeClickable(chooseAccBtn.get(0)));
 			chooseAccBtn.get(0).click();
 		}
 		catch(Exception e){
-			System.out.println("Failed to choose account");
+			logger.error("Failed to choose account");
 		}
 		
 	}
